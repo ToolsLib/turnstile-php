@@ -1,0 +1,17 @@
+{
+    "name": "toolslib/turnstile-php",
+    "autoload": {
+        "psr-4": {
+            "ToolsLib\\TurnstilePhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ToolsLib",
+            "email": "contact@toolslib.net"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.9"
+    }
+}
