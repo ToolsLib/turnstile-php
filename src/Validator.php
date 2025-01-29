@@ -2,6 +2,7 @@
 
 namespace ToolsLib\TurnstilePhp;
 
+use Psr\Http\Client\ClientInterface as PsrClientInterface;
 use ToolsLib\TurnstilePhp\TurnstileValidationException;
 use GuzzleHttp\Client;
 
@@ -13,9 +14,14 @@ class Validator
 
     private Client $client;
 
-    public function __construct(string $secretKey)
+    public function __construct(string $secretKey, ?PsrClientInterface $client = null)
     {
         $this->secretKey = $secretKey;
+
+        if ($client) {
+            $this->client = $client;
+            return;
+        }
         $this->client = new Client();
     }
 
